@@ -1,0 +1,72 @@
+[
+    {
+        "typeName": "Mutation",
+        "fieldName": "createAttendee",
+        "dataSourceName": "AttendeeTable",
+        "requestMappingTemplate": "{managed-by-awsmobile-cli}:Mutation.createAttendee.request",
+        "responseMappingTemplate": "{managed-by-awsmobile-cli}:Mutation.createAttendee.response"
+    },
+    {
+        "typeName": "Mutation",
+        "fieldName": "createMeetups",
+        "dataSourceName": "MeetupsTable",
+        "requestMappingTemplate": "{managed-by-awsmobile-cli}:Mutation.createMeetups.request",
+        "responseMappingTemplate": "{managed-by-awsmobile-cli}:Mutation.createMeetups.response"
+    },
+    {
+        "typeName": "Mutation",
+        "fieldName": "deleteAttendee",
+        "dataSourceName": "AttendeeTable",
+        "requestMappingTemplate": "{managed-by-awsmobile-cli}:Mutation.deleteAttendee.request",
+        "responseMappingTemplate": "{managed-by-awsmobile-cli}:Mutation.deleteAttendee.response"
+    },
+    {
+        "typeName": "Mutation",
+        "fieldName": "deleteMeetups",
+        "dataSourceName": "MeetupsTable",
+        "requestMappingTemplate": "{managed-by-awsmobile-cli}:Mutation.deleteMeetups.request",
+        "responseMappingTemplate": "{managed-by-awsmobile-cli}:Mutation.deleteMeetups.response"
+    },
+    {
+        "typeName": "Mutation",
+        "fieldName": "updateAttendee",
+        "dataSourceName": "AttendeeTable",
+        "requestMappingTemplate": "{managed-by-awsmobile-cli}:Mutation.updateAttendee.request",
+        "responseMappingTemplate": "{managed-by-awsmobile-cli}:Mutation.updateAttendee.response"
+    },
+    {
+        "typeName": "Mutation",
+        "fieldName": "updateMeetups",
+        "dataSourceName": "MeetupsTable",
+        "requestMappingTemplate": "{managed-by-awsmobile-cli}:Mutation.updateMeetups.request",
+        "responseMappingTemplate": "{managed-by-awsmobile-cli}:Mutation.updateMeetups.response"
+    },
+    {
+        "typeName": "Query",
+        "fieldName": "getAttendee",
+        "dataSourceName": "AttendeeTable",
+        "requestMappingTemplate": "{managed-by-awsmobile-cli}:Query.getAttendee.request",
+        "responseMappingTemplate": "{managed-by-awsmobile-cli}:Query.getAttendee.response"
+    },
+    {
+        "typeName": "Query",
+        "fieldName": "getMeetups",
+        "dataSourceName": "MeetupsTable",
+        "requestMappingTemplate": "{managed-by-awsmobile-cli}:Query.getMeetups.request",
+        "responseMappingTemplate": "{managed-by-awsmobile-cli}:Query.getMeetups.response"
+    },
+    {
+        "typeName": "Query",
+        "fieldName": "listAttendees",
+        "dataSourceName": "AttendeeTable",
+        "requestMappingTemplate": "{managed-by-awsmobile-cli}:Query.listAttendees.request",
+        "responseMappingTemplate": "{managed-by-awsmobile-cli}:Query.listAttendees.response"
+    },
+    {
+        "typeName": "Query",
+        "fieldName": "listMeetups",
+        "dataSourceName": "MeetupsTable",
+        "requestMappingTemplate": "{managed-by-awsmobile-cli}:Query.listMeetups.request",
+        "responseMappingTemplate": "{managed-by-awsmobile-cli}:Query.listMeetups.response"
+    }
+]

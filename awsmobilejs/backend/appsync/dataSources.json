@@ -1,0 +1,68 @@
+{
+    "dataSources": [
+        {
+            "name": "AttendeeTable",
+            "description": "DataSource for Amazon DynamoDB table AttendeeTable (arn:aws:dynamodb:us-east-1:123456789012:table/AttendeeTable)",
+            "type": "AMAZON_DYNAMODB",
+            "serviceRoleArn": "{managed-by-awsmobile-cli}",
+            "dynamodbConfig": {
+                "tableName": "AttendeeTable",
+                "awsRegion": "us-east-1",
+                "useCallerCredentials": false
+            }
+        },
+        {
+            "name": "MeetupsTable",
+            "description": "DataSource for Amazon DynamoDB table MeetupsTable (arn:aws:dynamodb:us-east-1:123456789012:table/MeetupsTable)",
+            "type": "AMAZON_DYNAMODB",
+            "serviceRoleArn": "{managed-by-awsmobile-cli}",
+            "dynamodbConfig": {
+                "tableName": "MeetupsTable",
+                "awsRegion": "us-east-1",
+                "useCallerCredentials": false
+            }
+        }
+    ],
+    "tables": [
+        {
+            "AttributeDefinitions": [
+                {
+                    "AttributeName": "id",
+                    "AttributeType": "S"
+                }
+            ],
+            "TableName": "AttendeeTable",
+            "KeySchema": [
+                {
+                    "AttributeName": "id",
+                    "KeyType": "HASH"
+                }
+            ],
+            "ProvisionedThroughput": {
+                "ReadCapacityUnits": 5,
+                "WriteCapacityUnits": 5
+            },
+            "Region": "us-east-1"
+        },
+        {
+            "AttributeDefinitions": [
+                {
+                    "AttributeName": "id",
+                    "AttributeType": "S"
+                }
+            ],
+            "TableName": "MeetupsTable",
+            "KeySchema": [
+                {
+                    "AttributeName": "id",
+                    "KeyType": "HASH"
+                }
+            ],
+            "ProvisionedThroughput": {
+                "ReadCapacityUnits": 5,
+                "WriteCapacityUnits": 5
+            },
+            "Region": "us-east-1"
+        }
+    ]
+}

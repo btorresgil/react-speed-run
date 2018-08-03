@@ -1,0 +1,164 @@
+type Attendee
+{
+id: ID!
+name: String!
+meetupsAttended: [Meetups]
+}
+
+type AttendeeConnection
+{
+items: [Attendee]
+nextToken: String
+}
+
+input CreateAttendeeInput
+{
+name: String!}
+
+input CreateMeetupsInput
+{
+title: String!
+date: String
+rating: Float}
+
+input DeleteAttendeeInput
+{
+id: ID!}
+
+input DeleteMeetupsInput
+{
+id: ID!}
+
+type Meetups
+{
+id: ID!
+title: String!
+date: String
+rating: Float
+}
+
+type MeetupsConnection
+{
+items: [Meetups]
+nextToken: String
+}
+
+type Mutation
+{
+createMeetups(input: CreateMeetupsInput! ): Meetups
+updateMeetups(input: UpdateMeetupsInput! ): Meetups
+deleteMeetups(input: DeleteMeetupsInput! ): Meetups
+createAttendee(input: CreateAttendeeInput! ): Attendee
+updateAttendee(input: UpdateAttendeeInput! ): Attendee
+deleteAttendee(input: DeleteAttendeeInput! ): Attendee
+}
+
+type Query
+{
+getMeetups(id: ID! ): Meetups
+listMeetups(filter: TableMeetupsFilterInput,limit: Int,nextToken: String ): MeetupsConnection
+getAttendee(id: ID! ): Attendee
+listAttendees(filter: TableAttendeeFilterInput,limit: Int,nextToken: String ): AttendeeConnection
+}
+
+type Subscription
+{
+onCreateMeetups(id: ID,title: String,date: String,rating: Float ): Meetups
+@aws_subscribe(mutations: ["createMeetups"])
+onUpdateMeetups(id: ID,title: String,date: String,rating: Float ): Meetups
+@aws_subscribe(mutations: ["updateMeetups"])
+onDeleteMeetups(id: ID,title: String,date: String,rating: Float ): Meetups
+@aws_subscribe(mutations: ["deleteMeetups"])
+onCreateAttendee(id: ID,name: String ): Attendee
+@aws_subscribe(mutations: ["createAttendee"])
+onUpdateAttendee(id: ID,name: String ): Attendee
+@aws_subscribe(mutations: ["updateAttendee"])
+onDeleteAttendee(id: ID,name: String ): Attendee
+@aws_subscribe(mutations: ["deleteAttendee"])
+}
+
+input TableAttendeeFilterInput
+{
+id: TableIDFilterInput
+name: TableStringFilterInput}
+
+input TableBooleanFilterInput
+{
+ne: Boolean
+eq: Boolean}
+
+input TableFloatFilterInput
+{
+ne: Float
+eq: Float
+le: Float
+lt: Float
+ge: Float
+gt: Float
+contains: Float
+notContains: Float
+between: [Float]}
+
+input TableIDFilterInput
+{
+ne: ID
+eq: ID
+le: ID
+lt: ID
+ge: ID
+gt: ID
+contains: ID
+notContains: ID
+between: [ID]
+beginsWith: ID}
+
+input TableIntFilterInput
+{
+ne: Int
+eq: Int
+le: Int
+lt: Int
+ge: Int
+gt: Int
+contains: Int
+notContains: Int
+between: [Int]}
+
+input TableMeetupsFilterInput
+{
+id: TableIDFilterInput
+title: TableStringFilterInput
+date: TableStringFilterInput
+rating: TableFloatFilterInput}
+
+input TableStringFilterInput
+{
+ne: String
+eq: String
+le: String
+lt: String
+ge: String
+gt: String
+contains: String
+notContains: String
+between: [String]
+beginsWith: String}
+
+input UpdateAttendeeInput
+{
+id: ID!
+name: String}
+
+input UpdateMeetupsInput
+{
+id: ID!
+title: String
+date: String
+rating: Float}
+
+schema 
+{
+query: Query
+mutation: Mutation
+subscription: Subscription
+}
